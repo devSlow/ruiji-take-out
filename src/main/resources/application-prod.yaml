@@ -1,0 +1,32 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8088
+  servlet:
+    session:
+      timeout: 2h
+# 应用启动名称
+spring:
+  application:
+    name: ruiji-takeout-service
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://101.43.65.55:3306/ruiji?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      username: root222
+      password: Mm12345695581
+  main:
+    allow-circular-references: true
+  mybatis-plus:
+   configuration:
+    # 开启自动映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      logic-delete-field: is_deleted
+slow-ruiji-takeout:
+#  baseContextPath: E:\ruiji-takeout\img\
+baseContextPath: /var/www/wwwroot/ruiji/images/
